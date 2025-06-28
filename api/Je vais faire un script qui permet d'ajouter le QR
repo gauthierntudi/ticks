@@ -1,0 +1,16 @@
+Je vais faire un script qui permet d'ajouter le QR Code à mes trois types de tickets et stocker la valeur de chaque QR Code généré et ajouté sur le ticket dans la base des données pour le possible contrôle.
+Le contrôle se fait avec une interface d'un lecteur QR code personnalisé pour vérifier le QR code sur le ticket et afficher un message selon l'état et si le QR est absent dans la BD 
+
+Pour générer le ticket, pas besoin de nom et emails
+car le ticket n'aura que le QR code
+C'est un fichier PNG qui existe déjà dans le dossier "img/" et qu'il faut tout simple y ajouter le QR code dans un emplacement spécifique.
+ET le QR code ajouté sur le ticket doit aussi être stocké dans la BD
+
+Ensuite donner la possibilité de générer le fichier PDF pour l'impression de tickets selon la catégorie (jour 1, jour 2 et Jour 3)
+
+Et le PDF doit être customisé selon la taille du ticket (2711x202)
+chaque ticket constitue une page du fichier PDF téléchargé. ce qui veut dire que chaque page du PDF aura cette taille ici : 2711x202
+
+Il faut aussi une page de monitoring qui affiche l'état de ticket. déjà scanné
+
+Fais moi un script HTML, CSS, Bootstrap Customisé, JS, GSAP

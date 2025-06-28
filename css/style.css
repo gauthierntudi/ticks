@@ -1,0 +1,386 @@
+/* Variables CSS */
+:root {
+    --primary-color: #007bff;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Styles généraux */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    box-shadow: var(--box-shadow);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    /* Assurer que les cartes sont visibles par défaut */
+    opacity: 1;
+    transform: none;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+    font-weight: 600;
+}
+
+/* Sections */
+.section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Boutons personnalisés */
+.btn {
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-lg {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+}
+
+/* Cartes de statistiques */
+.stat-card {
+    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+    color: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+    margin-bottom: 20px;
+    /* Assurer la visibilité initiale */
+    opacity: 1;
+    transform: scale(1);
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+.stat-card.bg-success {
+    background: linear-gradient(135deg, var(--success-color), #1e7e34);
+}
+
+.stat-card.bg-warning {
+    background: linear-gradient(135deg, var(--warning-color), #e0a800);
+    color: #212529;
+}
+
+.stat-card.bg-info {
+    background: linear-gradient(135deg, var(--info-color), #138496);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Scanner QR */
+.qr-reader-container {
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+#qr-reader {
+    width: 100%;
+}
+
+#qr-reader video {
+    border-radius: var(--border-radius);
+}
+
+.scan-result {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    min-height: 60px;
+}
+
+.scan-success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    border: 2px solid var(--success-color);
+    color: var(--success-color);
+}
+
+.scan-error {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    border: 2px solid var(--danger-color);
+    color: var(--danger-color);
+}
+
+.scan-warning {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border: 2px solid var(--warning-color);
+    color: #856404;
+}
+
+/* Aperçu des tickets */
+.ticket-preview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    /* Assurer la visibilité */
+    opacity: 1;
+}
+
+.ticket-preview {
+    position: relative;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    background: white;
+    /* Assurer la visibilité initiale */
+    opacity: 1;
+    transform: scale(1);
+}
+
+.ticket-preview:hover {
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow);
+}
+
+.ticket-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ticket-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    font-size: 0.8rem;
+}
+
+/* Table responsive */
+.table {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.table th {
+    background: var(--dark-color);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.table td {
+    vertical-align: middle;
+    border-color: #e9ecef;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+}
+
+/* Loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-overlay.show {
+    display: flex;
+}
+
+.loading-spinner {
+    text-align: center;
+    color: white;
+}
+
+.loading-spinner i {
+    color: var(--primary-color);
+}
+
+/* Classes pour les animations GSAP - ne pas affecter l'affichage initial */
+.gsap-fade-in {
+    /* Ne pas masquer par défaut, laisser GSAP gérer */
+}
+
+.gsap-scale-in {
+    /* Ne pas masquer par défaut, laisser GSAP gérer */
+}
+
+.gsap-slide-left {
+    /* Ne pas masquer par défaut, laisser GSAP gérer */
+}
+
+.gsap-slide-right {
+    /* Ne pas masquer par défaut, laisser GSAP gérer */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-card {
+        margin-bottom: 15px;
+    }
+    
+    .ticket-preview-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .btn-lg {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    .ticket-preview-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+/* Styles pour les formulaires */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: var(--transition);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Styles pour les modales */
+.modal-content {
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+    color: white;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+/* Effets de survol pour les liens de navigation */
+.navbar-nav .nav-link {
+    position: relative;
+    transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover {
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Assurer que les éléments sont visibles au chargement */
+.card-body, .ticket-preview-container, .stat-card {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
